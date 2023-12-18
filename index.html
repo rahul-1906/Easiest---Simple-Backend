@@ -16,26 +16,13 @@
 
 <body>
     <h2>This is an example of a simple form with Backend</h2>
-    <form method="post" name="google-sheet">
+    <form action="https://formspree.io/f/{form_id}" method="post">
         <div id="entries">Name: <input type="text" placeholder="Enter Name" name="Name"></div>
         <div id="entries"> Mobile no: <input type="number" placeholder="Enter Mobile no." name="Mobile"></div>
         <div id="entries">Email: <input type="email" placeholder="Enter email" name="Email"></div>
         <div id="entries">Message: <input type="text" placeholder="Enter Message" name="Message"></div>
+        <button type="submit">Submit</button>
     </form>
-
-
-    <!-- Forms to Google Sheets -->
-<script>
-    const scriptURL = ''
-    const form = document.forms['google-sheet']
-
-    form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-            .catch(error => console.error('Error!', error.message))
-    })
-</script>
 </body>
 
 </html>
